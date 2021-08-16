@@ -28,9 +28,6 @@ class OrderPaidChange
     public function handle(OrderPaid  $event)
     {
         info($event);
-        if ($event['payment_status']=='paid'){
-            $info = Order::where('price', $event['amount_total'])->update(['paid' => 1]);
-        return $info;
-        }
+
     }
 }
